@@ -18,7 +18,7 @@ function MenuChat({ id, roomName }) {
 
 
     const getLastInfo = () => {
-    axios.get(`/messages/menuData?id=${id}`).then((res) => {
+    axios.get(`https://peaceful-shelf-48903.herokuapp.com/messages/menuData?id=${id}`).then((res) => {
       setLastMessage(res.data.message)
       setLastPic(res.data.user.pic)
     })

@@ -24,7 +24,7 @@ function Menu() {
   const [rooms, setRooms] = useState([]);
 
   const getRooms = () => {
-    axios.get('/messages/messageList').then((res) =>{
+    axios.get('https://peaceful-shelf-48903.herokuapp.com/messages/messageList').then((res) =>{
       setRooms(res.data);
         })
     }
@@ -34,12 +34,12 @@ function Menu() {
     const firstMessage = prompt('Send your first message to the Groupchat')
     if (roomName && firstMessage) {
       let messageId = ''
-      axios.post('/messages/room', {
+      axios.post('https://peaceful-shelf-48903.herokuapp.com/messages/room', {
         roomName: roomName
       }).then((res) => {
         messageId = res.data._id
       }).then(() => {
-        axios.post(`/messages/new?id=${messageId}`, {
+        axios.post(`https://peaceful-shelf-48903.herokuapp.com/messages/new?id=${messageId}`, {
           message: firstMessage,
           time: Date.now(),
           user: user

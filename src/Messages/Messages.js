@@ -24,7 +24,7 @@ function Messages() {
 
     const getConvo = (messageId) => {
         if (messageId) {
-            axios.get(`/messages/chat?id=${messageId}`).then((res) => {
+            axios.get(`https://peaceful-shelf-48903.herokuapp.com/messages/chat?id=${messageId}`).then((res) => {
                 setMessages(res.data[0].message_content)
       })
     }
@@ -32,7 +32,7 @@ function Messages() {
     const sendMessage = (e) => {
         e.preventDefault();
 
-        axios.post(`/messages/new?id=${messageId}`, {
+        axios.post(`https://peaceful-shelf-48903.herokuapp.com/messages/new?id=${messageId}`, {
             message: input,
             time: Date.now(),
             user: user
