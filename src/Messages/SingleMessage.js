@@ -10,7 +10,7 @@ function SingleMessage ({ id, sender, message, time}){
         className={`message_text ${user.email === sender.email && "message_send"}`}
       >
         <div className="header_send">
-          <p>{user.displayName}</p>
+          <p>{sender.displayName}</p>
           <Avatar src={sender.pic} />
         </div>
         <p>{message}</p>
